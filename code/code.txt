@@ -1,0 +1,146 @@
+//Abdalrahim Sawalha  #211081
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/*
+
+Tinkercad link project :
+
+https://www.tinkercad.com/things/cyo8cB8iD8K-abdalrahim-sawalha/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard&sharecode=qhymRCvRxMCVmGmheJESR2bZ-u5zX6QW8C5kG9xlOG4
+
+*/
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#define E1_2 3
+#define IN_1 2
+#define IN_2 4
+#define IN_4 12
+#define IN_3 7
+#define E3_4 6
+#define swit 8
+#define front 9
+#define left 10
+#define right 11
+#define back 5
+
+int leftSens = 0;
+int rightSens = 0;
+int frontSens = 0;
+int backSens = 0;
+
+void setup()
+{
+    pinMode(IN_1, OUTPUT);
+    pinMode(IN_2, OUTPUT);
+    pinMode(IN_3, OUTPUT);
+    pinMode(IN_4, OUTPUT);
+    pinMode(E1_2, OUTPUT);
+    pinMode(E3_4, OUTPUT);
+}
+
+long ultraSonicSens(int trig)
+{
+    pinMode(trig, OUTPUT);
+    digitalWrite(trig, LOW);
+    delayMicroseconds(2);
+    digitalWrite(trig, HIGH);
+    delayMicroseconds(10);
+    digitalWrite(trig, LOW);
+
+    pinMode(trig, INPUT);
+
+    return pulseIn(trig, HIGH) * 0.034 / 2;
+}
+
+void moveForward()
+{
+    analogWrite(E1_2, 255);
+    analogWrite(E3_4, 255);
+    digitalWrite(IN_1, HIGH);
+    digitalWrite(IN_3, HIGH);
+    digitalWrite(IN_2, LOW);
+    digitalWrite(IN_4, LOW);
+}
+
+void moveRight()
+{
+    analogWrite(E1_2, 0);
+    analogWrite(E3_4, 255);
+    digitalWrite(IN_1, LOW);
+    digitalWrite(IN_3, HIGH);
+    digitalWrite(IN_2, LOW);
+    digitalWrite(IN_4, LOW);
+}
+
+void moveLeft()
+{
+    analogWrite(E1_2, 255);
+    analogWrite(E3_4, 0);
+    digitalWrite(IN_1, HIGH);
+    digitalWrite(IN_3, LOW);
+    digitalWrite(IN_2, LOW);
+    digitalWrite(IN_4, LOW);
+}
+
+void moveBackward()
+{
+    analogWrite(E1_2, 255);
+    analogWrite(E3_4, 255);
+    digitalWrite(IN_1, LOW);
+    digitalWrite(IN_3, LOW);
+    digitalWrite(IN_2, HIGH);
+    digitalWrite(IN_4, HIGH);
+}
+
+void stopMotor()
+{
+    analogWrite(E1_2, 0);
+    analogWrite(E3_4, 0);
+    digitalWrite(IN_1, LOW);
+    digitalWrite(IN_3, LOW);
+    digitalWrite(IN_2, LOW);
+    digitalWrite(IN_4, LOW);
+}
+
+void loop()
+{
+    frontSens = ultraSonicSens(front);
+    rightSens = ultraSonicSens(right);
+    leftSens = ultraSonicSens(left);
+    backSens = ultraSonicSens(back);
+
+    if (digitalRead(swit) == HIGH)
+    {
+        if (frontSens > 40)
+        {
+            moveForward();
+        }
+        else
+        {
+            if (rightSens > 40)
+            {
+                moveRight();
+            }
+            else if (leftSens > 40)
+            {
+                moveLeft();
+            }
+            else if (backSens > 40)
+            {
+                moveBackward();
+            }
+            else
+            {
+                stopMotor();
+            }
+        }
+    }
+    else
+    {
+        stopMotor();
+    }
+
+    delay(500);
+}
