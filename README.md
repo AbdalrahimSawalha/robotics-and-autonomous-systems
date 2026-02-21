@@ -1,65 +1,61 @@
-Robotics and Autonomous Systems 🤖
+# Robotics and Autonomous Systems 🤖
 
+---
 
+## Overview 📘
 
+This project is part of the Robotics and Autonomous Systems course. The robot was designed and simulated using Tinkercad and programmed to perform autonomous tasks based on predefined logic.
 
-Overview :
+---
 
-  This project is part of the Robotics and Autonomous Systems course. The robot was designed and simulated using Tinkercad and programmed to perform autonomous tasks based on predefined logic.
+## Features ⚙️
 
-  
-  
+. Robot control logic implementation
 
-Features :
+. Autonomous system simulation
 
-  . Robot control logic implementation
-  
-  . Autonomous system simulation
-  
-  . Tinkercad simulation included
-  
-  . Project presentation included
-  
-  . Visual representation of the robot
+. Tinkercad simulation included
 
-  
-  
+. Project presentation included
 
-Project Structure:
+. Visual representation of the robot
 
-  . code/ → contains the project source code
-  
-  . presentation/ → contains the PowerPoint presentation
-  
-  . images/ → contains images of the robot and system
-  
-  . simulation/ → contains the Tinkercad simulation link
+---
 
-  
+## Project Structure 📁
 
+. code/ → contains the project source code
 
-Simulation:
+. presentation/ → contains the PowerPoint presentation
 
-  See the simulation link in:
-  
-    simulation/Tinkercad link.txt
+. images/ → contains images of the robot and system
 
-    
-    
-    
-Project Preview :
+. simulation/ → contains the Tinkercad simulation link
 
-  See the robot image in the images folder.
+---
 
-  
-  
+## Simulation 🧪
 
-Author : 
-  Abdalrahim Sawalha
+See the simulation link in:
 
-  
-  
+simulation/Tinkercad link.txt
 
-Course :
-  Robotics and Autonomous Systems
-  
+---
+
+## Project Preview 🖼️
+
+See the robot image in the images folder.
+
+---
+
+## Author 👨‍💻
+
+Abdalrahim Sawalha
+
+---
+
+## Course 
+
+Robotics and Autonomous Systems
+
+---
