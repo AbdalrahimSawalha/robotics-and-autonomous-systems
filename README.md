@@ -1,9 +1,13 @@
 Robotics and Autonomous Systems 🤖
 
 
+
+
 Overview :
 
   This project is part of the Robotics and Autonomous Systems course. The robot was designed and simulated using Tinkercad and programmed to perform autonomous tasks based on predefined logic.
+
+  
   
 
 Features :
@@ -17,6 +21,8 @@ Features :
   . Project presentation included
   
   . Visual representation of the robot
+
+  
   
 
 Project Structure:
@@ -29,25 +35,31 @@ Project Structure:
   
   . simulation/ → contains the Tinkercad simulation link
 
+  
+
 
 Simulation:
 
   See the simulation link in:
   
     simulation/Tinkercad link.txt
+
+    
     
     
 Project Preview :
 
   See the robot image in the images folder.
+
+  
   
 
 Author : 
-
   Abdalrahim Sawalha
+
+  
   
 
 Course :
-
   Robotics and Autonomous Systems
   
